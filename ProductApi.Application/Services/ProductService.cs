@@ -3,7 +3,7 @@
 using ProductApi.Application.Interfaces;
 using ProductApi.Domain.Entities;
 
-public class ProductService
+public class ProductService : IProductService
 {
     private readonly IProductRepository _repo;
 
