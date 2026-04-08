@@ -1,0 +1,10 @@
+# .NET
+bin/
+obj/
+*.user
+*.vs/
+*.exe
+*.dll
+
+# Visual Studio temporary
+.vs/
