@@ -8,9 +8,9 @@ using ProductApi.Infrastructure.Data;
 public class AuthService : IAuthService
 {
     private readonly AppDbContext _context;
-    private readonly JwtService _jwt;
+    private readonly IJwtService _jwt;
 
-    public AuthService(AppDbContext context, JwtService jwt)
+    public AuthService(AppDbContext context, IJwtService jwt)
     {
         _context = context;
         _jwt = jwt;

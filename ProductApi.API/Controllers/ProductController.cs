@@ -1,21 +1,22 @@
 ﻿namespace ProductApi.API.Controllers;
 
+using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
+using ProductApi.Application.Interfaces;
 using ProductApi.Application.Services;
 using ProductApi.Domain.Entities;
-using System.Text.Json;
 
 [Authorize]
 [ApiController]
 [Route("api/products")]
 public class ProductController : ControllerBase
 {
-    private readonly ProductService _service;
+    private readonly IProductService _service;
     private readonly IDistributedCache _cache;
 
-    public ProductController(ProductService service, IDistributedCache cache)
+    public ProductController(IProductService service, IDistributedCache cache)
     {
         _service = service;
         _cache = cache;

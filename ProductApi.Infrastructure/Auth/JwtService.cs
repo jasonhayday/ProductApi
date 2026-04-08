@@ -1,13 +1,14 @@
 ﻿namespace ProductApi.Infrastructure.Auth;
 
-using Microsoft.IdentityModel.Tokens;
-using ProductApi.Domain.Entities;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using ProductApi.Application.Interfaces;
+using ProductApi.Domain.Entities;
 
-public class JwtService
+public class JwtService : IJwtService
 {
     private readonly IConfiguration _config;
 
